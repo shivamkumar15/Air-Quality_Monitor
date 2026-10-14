@@ -2,10 +2,8 @@
 #include <LiquidCrystal_I2C.h>
 #include <DHT.h>
 
-// LCD configuration
 LiquidCrystal_I2C lcd(0x27, 16, 2);
 
-// Pin configuration
 #define MQ135_PIN     A0
 #define DHT_PIN       2
 #define DHT_TYPE      DHT11
@@ -13,7 +11,6 @@ LiquidCrystal_I2C lcd(0x27, 16, 2);
 #define GREEN_LED_PIN 6   // Optional: Normal indicator LED
 #define BUZZER_PIN    8
 
-// Change to true if using a passive buzzer, false if using an active buzzer
 const bool IS_PASSIVE_BUZZER = true; 
 
 // Initial demonstration threshold (adjust based on your Serial Monitor readings)
@@ -88,7 +85,6 @@ void loop() {
     deactivateAlarm();
   }
 
-  // --- Serial Monitor Output ---
   Serial.print("MQ135 Gas: ");
   Serial.print(gasValue);
   Serial.print(" | Threshold: ");
@@ -96,11 +92,10 @@ void loop() {
   Serial.print(" | Status: ");
   Serial.println(gasAlert ? "ALERT!" : "OK");
 
-  // --- LCD Row 1: Gas reading and status ---
   lcd.setCursor(0, 0);
   lcd.print("Gas:");
   lcd.print(gasValue);
-  lcd.print("   "); // Clears leftover digits
+  lcd.print("   "); 
 
   lcd.setCursor(10, 0);
   if (gasAlert) {
@@ -109,14 +104,13 @@ void loop() {
     lcd.print("NORMAL");
   }
 
-  // --- LCD Row 2: Temperature & Humidity ---
   lcd.setCursor(0, 1);
   if (isnan(temperature) || isnan(humidity)) {
     lcd.print("DHT11 Error     ");
   } else {
     lcd.print("T:");
     lcd.print((int)temperature);
-    lcd.print((char)223); // Degree symbol
+    lcd.print((char)223); 
     lcd.print("C H:");
     lcd.print((int)humidity);
     lcd.print("%   ");
