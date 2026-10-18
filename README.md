@@ -103,7 +103,3 @@ The MQ135 needs warm-up and calibration for meaningful measurements. Its raw ana
 ## Project Purpose
 
 This project demonstrates embedded systems, sensor interfacing, analog and digital input/output, LCD communication, environmental monitoring, and threshold-based alert systems using an Arduino Uno.
-
-## License
-
-This project is intended for educational and personal experimentation. Add a license, such as the MIT License, if you want to explicitly permit reuse and modification under its terms.
