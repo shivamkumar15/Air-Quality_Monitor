@@ -47,23 +47,4 @@ The gas alert threshold is configured in the Arduino sketch.
 
 The MQ135 needs warm-up and calibration for meaningful measurements. Its raw analog reading should not be interpreted directly as a certified air-quality value.
 
-## Limitations and Safety
-
-- The MQ135 requires warm-up and calibration.
-- Raw MQ135 readings are not a certified Air Quality Index (AQI), CO2 concentration, or PM2.5 measurement.
-- This project is an educational prototype and must not replace certified air-quality monitoring or safety equipment.
-- The MQ135 heater becomes warm during operation.
-- Bare LEDs require current-limiting resistors.
-- Disconnect the Arduino from USB before changing circuit connections.
-
-## Future Improvements
-
-- Add data logging using an SD card.
-- Add wireless monitoring using an ESP8266 or ESP32.
-- Display historical sensor readings on a computer dashboard.
-- Improve sensor calibration and measurement accuracy.
-- Add an enclosure for a cleaner final presentation.
-
-## Project Purpose
-
 This project demonstrates embedded systems, sensor interfacing, analog and digital input/output, LCD communication, environmental monitoring, and threshold-based alert systems using an Arduino Uno.
